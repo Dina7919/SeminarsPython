@@ -28,7 +28,7 @@
 # i = 1
 
 # while i <= number:
-#     fact *= 1
+#     fact *= i
 #     i = i+1
 
 # print(fact)
@@ -40,6 +40,23 @@
 # for i in range(number):
 #     fact *= i
 # print(fact)
+
+#Задача_1_2
+
+# number = int(input('Введите n, которое вы хотите проверить: '))
+# count_of_fibonachi_number = 1
+# first_number = 0
+# second_number = 1
+# current_number = 1
+# while current_number <= number:
+#     current_number = first_number + second_number
+#     first_number = second_number
+#     second_number = current_number
+#     count_of_fibonachi_number += 1
+#     if (current_number == number):
+#         print(count_of_fibonachi_number)
+#         exit(0)
+# print(-1)
 
 # Задача №11. Решение в группах
 # Дано натуральное число A > 1. Определите, каким по
@@ -95,6 +112,26 @@
 # print("today = ")
 # print(today)
 
+# Задача_2_2
+
+# import random 
+# all_days = int(input("Введите количество дней "))
+# today = 0
+# i = 0
+# count = 0
+# max = 0
+# while i <= all_days:
+#     today += random.randint(-3,3)
+#     print(today, end=" ")
+#     if today > 0:
+#         count += 1
+#         if max < count:
+#             max = count
+#         else:
+#             count = 0
+#         i += 1
+# print(f"\n\n{max}")
+
 # Иван Васильевич пришел на рынок и решил купить два арбуза: один для себя, а другой для тещи. 
 # Понятно, что для себя нужно выбрать арбуз потяжелей, а для тещи полегче. 
 # Но вот незадача: арбузов слишком много и он не знает как же выбрать самый легкий и самый тяжелый арбуз? Помогите ему!
@@ -102,22 +139,22 @@
 # Вторая строка содержит N чисел, записанных на новой строчке каждое. 
 # Здесь каждое число – это масса соответствующего арбуза. Все числа натуральные и не превышают 30000.
 
-import random
-n = int(input('Введите количество арбузов: '))
-max_weight = 0
-index = 0
-arbuz = 0
-while(index < n):
-    arbuz = random.randint(10000,30000)
-    min_weight = arbuz
-    print(arbuz)
-    if (arbuz > max_weight):
-        max_weight = arbuz
-    if (arbuz < min_weight):
-        arbuz = min_weight
-    index = index + 1
-print(max_weight) 
-print(min_weight)
+# import random
+# n = int(input('Введите количество арбузов: '))
+# max_weight = 0
+# index = 0
+# arbuz = 0
+# while(index < n):
+#     arbuz = random.randint(10000,30000)
+#     min_weight = arbuz
+#     print(arbuz)
+#     if (arbuz > max_weight):
+#         max_weight = arbuz
+#     if (arbuz < min_weight):
+#         arbuz = min_weight
+#     index = index + 1
+# print(max_weight) 
+# print(min_weight)
 
 
 # i = 0
@@ -131,3 +168,17 @@ print(min_weight)
 #     i = i + 1
 # print("today = ")
 
+import random
+
+number = int(input('Введите количество арбузов: '))
+min_weight = 20
+max_weight = 1
+for i in range(number):
+    massa = random.randint(1,20)
+    print(massa, end=' ')
+    if massa > max_weight:
+        max_weight = massa
+    elif massa < min_weight:
+        min_weight = massa
+
+print(f'\n Ьаксимальный вес арбуза - {max_weight} и минимальный {min_weight}')
